@@ -1,2 +1,31 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<h1>Books</h1>
+
+
+<h2 class="newbook">New book</h2>
+
+
+<div>
+  <% if @book.errors.any? %>
+    <p class="error-message">
+      <%= @book.errors.count %>error prohibited this book from being saved:
+    </p>
+    <ul class="error-message-content">
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+
+<%= form_with model: @book do |f| %>
+  <p class="new-title-body">Title</p>
+  <%= f.text_field :title %>
+
+  <p class="new-title-body">Body</p>
+  <%= f.text_area :body %>
+
+  <div>
+    <%= f.submit 'Create Book' %>
+  </div>
+<% end %>
