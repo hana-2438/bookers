@@ -1,8 +1,28 @@
-<h1>Books</h1>
+<h1 class="index-title">Books</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th class="title">Title</th>
+      <th class="body">Body</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books. each do |book| %>
+    <tr>
+      <td><%= book.title %></td>
+      <td><%= book.body %></td>
+      <!--"Show""Edit""Destroy"ページ実装後リンクを作成する-->
+
+
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
 
 <h2 class="newbook">New book</h2>
-
 
 <div>
   <% if @book.errors.any? %>
@@ -20,12 +40,16 @@
 
 <%= form_with model: @book do |f| %>
   <p class="new-title-body">Title</p>
+  <div class="text">
   <%= f.text_field :title %>
+  </div>
 
   <p class="new-title-body">Body</p>
+  <div class="text">
   <%= f.text_area :body %>
+  </div>
 
-  <div>
+  <div class="create-button">
     <%= f.submit 'Create Book' %>
   </div>
 <% end %>

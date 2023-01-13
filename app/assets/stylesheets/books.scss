@@ -9,15 +9,41 @@
 
 //以下はindex.html.erbのcss記述です
 
+.index-title{
+  margin: 20px 0 15px 20px;
+}
+
+table{
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.title{
+  width: 250px;
+}
+
+.body{
+  width: 500px;
+}
+
 .newbook{
   font-size: 20px;
   margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .new-title-body{
   margin-bottom: 10px;
+  margin-left: 20px;
 }
 
+.text{
+  margin-left: 20px;
+}
+
+.create-button{
+  margin-left: 20px;
+}
 
 
 
