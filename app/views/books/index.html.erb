@@ -14,8 +14,8 @@
       <td><%= book.title %></td>
       <td><%= book.body %></td>
       <!--"Show""Edit""Destroy"ページ実装後リンクを作成する-->
-
-
+      <td><%= link_to "Show", book_path(book.id) %></td>
+      <td><%= link_to "Edit", edit_book_path(book) %></td>
     </tr>
     <% end %>
   </tbody>
